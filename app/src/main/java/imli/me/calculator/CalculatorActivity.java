@@ -5,12 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 import imli.me.calculator.cal.CalculatorIpml;
 import imli.me.calculator.cal.OnCalculatorListener;
