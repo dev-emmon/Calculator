@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="imli.me.calculator.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_show_result"
+        style="@style/Layout.Calculator.Show"
+        app:layout_constraintBottom_toTopOf="@id/tv_show_calculator"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="100" />
+
+
+    <TextView
+        android:id="@+id/tv_show_calculator"
+        style="@style/Layout.Calculator.Show"
+        app:layout_constraintBottom_toTopOf="@id/layout_calculator_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_result"
+        tools:text="50+50" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_calculator_content"
+        style="@style/Layout.Calculator.Content"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_calculator"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
+
+        <Button
+            android:id="@+id/btn_divided"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_symbol_divided"
+            android:text="@string/calculator_symbol_divided"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_7"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_multiply"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_multiply"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_symbol_multiply"
+            android:text="@string/calculator_symbol_multiply"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_8"
+            app:layout_constraintLeft_toRightOf="@id/btn_divided"
+            app:layout_constraintRight_toLeftOf="@id/btn_subtraction"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_subtraction"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_symbol_subtraction"
+            android:text="@string/calculator_symbol_subtraction"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_9"
+            app:layout_constraintLeft_toRightOf="@id/btn_multiply"
+            app:layout_constraintRight_toLeftOf="@id/btn_addition"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_addition"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_symbol_addition"
+            android:text="@string/calculator_symbol_addition"
+            app:layout_constraintBottom_toTopOf="@id/btn_ac"
+            app:layout_constraintLeft_toRightOf="@id/btn_subtraction"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/btn_num_7"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_7"
+            android:text="@string/calculator_num_7"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_8"
+            app:layout_constraintTop_toBottomOf="@id/btn_divided" />
+
+        <Button
+            android:id="@+id/btn_num_8"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_8"
+            android:text="@string/calculator_num_8"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_5"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_7"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_9"
+            app:layout_constraintTop_toBottomOf="@id/btn_multiply" />
+
+        <Button
+            android:id="@+id/btn_num_9"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_9"
+            android:text="@string/calculator_num_9"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_6"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_8"
+            app:layout_constraintRight_toLeftOf="@id/btn_ac"
+            app:layout_constraintTop_toBottomOf="@id/btn_subtraction" />
+
+        <Button
+            android:id="@+id/btn_ac"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_operate_ac"
+            android:text="@string/calculator_operate_ac"
+            app:layout_constraintBottom_toTopOf="@id/btn_delete"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_9"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_addition" />
+
+
+        <Button
+            android:id="@+id/btn_num_4"
+            style="@style/Btn.Calculator"
+            android:layout_width="0dp"
+            android:tag="@string/calculator_num_4"
+            android:text="@string/calculator_num_4"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_5"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_7" />
+
+        <Button
+            android:id="@+id/btn_num_5"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_5"
+            android:text="@string/calculator_num_5"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_2"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_4"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_6"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_8" />
+
+        <Button
+            android:id="@+id/btn_num_6"
+            style="@style/Btn.Calculator"
+            android:layout_width="0dp"
+            android:tag="@string/calculator_num_6"
+            android:text="@string/calculator_num_6"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_3"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_5"
+            app:layout_constraintRight_toLeftOf="@id/btn_delete"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_9" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_operate_del"
+            android:text="@string/calculator_operate_del"
+            app:layout_constraintBottom_toTopOf="@id/btn_calculator"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_6"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_ac" />
+
+
+        <Button
+            android:id="@+id/btn_num_1"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_1"
+            android:text="@string/calculator_num_1"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_2"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_4" />
+
+        <Button
+            android:id="@+id/btn_num_2"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_2"
+            android:text="@string/calculator_num_2"
+            app:layout_constraintBottom_toTopOf="@id/btn_num_0"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_1"
+            app:layout_constraintRight_toLeftOf="@id/btn_num_3"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_5" />
+
+        <Button
+            android:id="@+id/btn_num_3"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_num_3"
+            android:text="@string/calculator_num_3"
+            app:layout_constraintBottom_toTopOf="@id/btn_point"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_2"
+            app:layout_constraintRight_toLeftOf="@id/btn_calculator"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_6" />
+
+        <Button
+            android:id="@+id/btn_calculator"
+            style="@style/Btn.Calculator"
+            android:layout_marginEnd="0.1dp"
+            android:layout_marginRight="0.1dp"
+            android:tag="@string/calculator_operate_calculator"
+            android:text="@string/calculator_operate_calculator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_delete"
+            app:layout_constraintVertical_weight="2" />
+
+        <Button
+            android:id="@+id/btn_num_0"
+            style="@style/Btn.Calculator"
+            android:layout_marginBottom="0.1dp"
+            android:tag="@string/calculator_num_0"
+            android:text="@string/calculator_num_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_point"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_1" />
+
+        <Button
+            android:id="@+id/btn_point"
+            style="@style/Btn.Calculator"
+            android:tag="@string/calculator_symbol_point"
+            android:text="@string/calculator_symbol_point"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_num_0"
+            app:layout_constraintRight_toLeftOf="@id/btn_calculator"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_3" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
