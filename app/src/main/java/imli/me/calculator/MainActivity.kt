@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import imli.me.calculator.cal.CalculatorConfig
 import imli.me.calculator.cal.CalculatorIpml
 import imli.me.calculator.cal.OnCalculatorListener
 
@@ -40,13 +41,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initialization() {
-        calculatorIpml = CalculatorIpml(
-                resources.getString(R.string.calculator_symbol_addition),
-                resources.getString(R.string.calculator_symbol_subtraction),
-                resources.getString(R.string.calculator_symbol_multiply),
-                resources.getString(R.string.calculator_symbol_divided)
-        )
-        calculatorIpml!!.setOnCalculatorListener(onCalculatorListener())
+        val config = CalculatorConfig.Builder()
+                .withSymbolAdd(resources.getString(R.string.calculator_symbol_addition))
+                .withSymbolSub(resources.getString(R.string.calculator_symbol_subtraction))
+                .withSymbolMul(resources.getString(R.string.calculator_symbol_multiply))
+                .withSymbolDiv(resources.getString(R.string.calculator_symbol_divided))
+                .withSymbolPoint(resources.getString(R.string.calculator_symbol_point))
+                .create()
+        calculatorIpml = CalculatorIpml(config)
+        calculatorIpml?.setOnCalculatorListener(onCalculatorListener())
     }
 
 

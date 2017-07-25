@@ -34,18 +34,7 @@ interface BasicCalculator {
     fun divided(num1: Double, num2: Double): Double
 
     /**
-     * 清0
-     */
-    fun ac()
-
-
-    /**
-     * 删除
-     */
-    fun del()
-
-    /**
      * 计算
      */
-    fun calculator(equation: String)
+    fun calculator(equation: String): String
 }

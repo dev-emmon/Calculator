@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
 
+import imli.me.calculator.cal.CalculatorConfig;
 import imli.me.calculator.cal.CalculatorIpml;
 import imli.me.calculator.cal.OnCalculatorListener;
 
@@ -51,12 +52,14 @@ public class CalculatorActivity extends AppCompatActivity {
      *
      */
     private void initialization() {
-        calculatorIpml = new CalculatorIpml(
-                getResources().getString(R.string.calculator_symbol_addition),
-                getResources().getString(R.string.calculator_symbol_subtraction),
-                getResources().getString(R.string.calculator_symbol_multiply),
-                getResources().getString(R.string.calculator_symbol_divided)
-        );
+        CalculatorConfig config = new CalculatorConfig.Builder()
+                .withSymbolAdd(getResources().getString(R.string.calculator_symbol_addition))
+                .withSymbolSub(getResources().getString(R.string.calculator_symbol_subtraction))
+                .withSymbolMul(getResources().getString(R.string.calculator_symbol_multiply))
+                .withSymbolDiv(getResources().getString(R.string.calculator_symbol_divided))
+                .withSymbolPoint(getResources().getString(R.string.calculator_symbol_point))
+                .create();
+        calculatorIpml = new CalculatorIpml(config);
         calculatorIpml.setOnCalculatorListener(onCalculatorListener());
     }
 
